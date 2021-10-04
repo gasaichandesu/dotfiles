@@ -24,8 +24,8 @@ opt.smartcase = true
 opt.scrolloff = 8
 opt.signcolumn = "yes"
 
-vim.api.nvim_set_keymap('n', '<C-p>', '<CMD>Files<CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-E>', '<CMD>NERDTreeToggle<CR>', opts)  
+-- vim.api.nvim_set_keymap('n', '<C-p>', '<CMD>Files<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<C-E>', '<CMD>NERDTreeToggle<CR>', opts)  
 
 -- Runs Formatter on save
 vim.api.nvim_exec(

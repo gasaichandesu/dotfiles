@@ -69,9 +69,25 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["completion-nvim"] = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/completion-nvim"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
+  },
+  ["flutter-tools.nvim"] = {
+    loaded = true,
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim"
+  },
+  ["formatter.nvim"] = {
+    loaded = true,
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/formatter.nvim"
   },
   fzf = {
     loaded = true,
@@ -80,6 +96,10 @@ _G.packer_plugins = {
   ["fzf.vim"] = {
     loaded = true,
     path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/fzf.vim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   nerdtree = {
     loaded = true,
@@ -92,6 +112,10 @@ _G.packer_plugins = {
   ["nord-vim"] = {
     loaded = true,
     path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nord-vim"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -109,6 +133,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/vim-airline"
@@ -116,6 +144,10 @@ _G.packer_plugins = {
   ["vim-devicons"] = {
     loaded = true,
     path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/vim-devicons"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   }
 }
 
