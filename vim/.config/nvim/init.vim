@@ -36,14 +36,17 @@ nnoremap <leader>p :NERDTreeToggle<CR>
 nnoremap <C-s> :w<CR>
 
 " Set completeopt to have a better completion experience
-let g:completion_enable_auto_popup = 1
+let g:completion_enable_auto_popup = 0
 set completeopt=menuone,noinsert,noselect
+
+" Show hidden files in NERDTree 
+let NERDTreeShowHidden = 1
 
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
 augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePost *.dart,*.js,*.rs,*.lua,*.php FormatWrite
+    autocmd BufWritePost *.vue,*.dart,*.js,*.rs,*.lua,*.php FormatWrite
     autocmd BufWritePre *\(.dart\)@<! :normal migg=G`i
 augroup END

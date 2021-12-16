@@ -1,5 +1,5 @@
 return require("packer").startup(
-function()
+  function()
     use "wbthomason/packer.nvim"
 
     use "neovim/nvim-lspconfig"
@@ -12,21 +12,23 @@ function()
     use "hrsh7th/cmp-vsnip"
     use "hrsh7th/vim-vsnip"
 
+    use "tpope/vim-fugitive"
+
     use {
-        "junegunn/fzf",
-        run = function()
-            vim.fn["fzf#install"]()
-        end
+      "junegunn/fzf",
+      run = function()
+        vim.fn["fzf#install"]()
+      end
     }
     use "junegunn/fzf.vim"
 
     use "mhartington/formatter.nvim"
 
     use {
-        "nvim-treesitter/nvim-treesitter",
-        run = function()
-            vim.cmd [[TSUpdate]]
-        end
+      "nvim-treesitter/nvim-treesitter",
+      run = function()
+        vim.cmd [[TSUpdate]]
+      end
     }
 
     use "nvim-lua/plenary.nvim"
@@ -39,5 +41,5 @@ function()
     use "vim-airline/vim-airline"
 
     use "arcticicestudio/nord-vim"
-end
+  end
 )

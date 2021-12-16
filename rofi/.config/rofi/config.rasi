@@ -1,5 +1,4 @@
 configuration {
-    theme: "nord";
 /*	modi: "window,run,ssh";*/
 /*	font: "mono 12";*/
 /*	location: 0;*/
@@ -145,3 +144,5 @@ configuration {
       sorting-method:    "name";
   }
 }
+
+@theme "nord"
