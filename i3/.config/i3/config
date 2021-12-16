@@ -20,6 +20,10 @@ exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 # Wallpaper
 exec_always --no-startup-id feh --bg-scale ~/Pictures/plain-arch.png
 
+# Messengers
+exec_always --no-startup-id telegram-desktop
+exec_always --no-startup-id vk
+
 # Polybar
 exec_always --no-startup-id polybar -r example
 
@@ -29,7 +33,6 @@ default_floating_border pixel 1
 
 # Mouse acceleration
 exec_always --no-startup-id xinput --set-prop 10 156 0.35 0 0 0 0.35 0 0 0 1
-exec_always --no-startup-id xinput --set-prop 9 156 0.35 0 0 0 0.35 0 0 0 1
 
 # Keyboard layout
 exec_always --no-startup-id setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
@@ -41,10 +44,6 @@ gaps outer 5
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Source Code Pro 13
-
-# Scrot hotkeys
-bindsym Ctrl+Shift+Print --release exec --no-startup-id scrot --select -e 'mv $f ~/Pictures/Screenshots'
-bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots'
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -60,6 +59,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+
+# Floating by default for some windows
+for_window [class="VK"] floating enable
+for_window [class="TelegramDesktop"] floating enable
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -127,7 +131,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+z floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
