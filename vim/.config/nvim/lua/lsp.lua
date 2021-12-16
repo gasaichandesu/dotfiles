@@ -102,8 +102,10 @@ local function setup_servers()
   local lspinstaller = require "nvim-lsp-installer"
   local lspconfig = require "lspconfig"
 
-  lspconfig.lua.setup {
-    -- An example of settings for an LSP server.
+  lspconfig.pyright.setup {}
+
+  lspconfig.sumneko_lua.setup {
+    -- An example of ssumneko_lua for an LSP server.
     --    For more options, see nvim-lspconfig
     settings = {
       Lua = {
@@ -134,8 +136,6 @@ local function setup_servers()
     on_attach = on_attach,
     capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
   }
-
-  lspconfig.vue.setup {}
 end
 
 setup_servers()

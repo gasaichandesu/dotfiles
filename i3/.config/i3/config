@@ -64,7 +64,7 @@ exec --no-startup-id nm-applet
 # Floating by default for some windows
 for_window [class="VK"] floating enable
 for_window [class="TelegramDesktop"] floating enable
-for window [class="Slack"] floating enable
+for_window [class="Slack"] floating enable
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

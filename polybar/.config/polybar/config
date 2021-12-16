@@ -34,7 +34,7 @@ function = #B48EAD
 module-margin="   "
 
 [bar/example]
-monitor=HDMI-0
+monitor=DP-0
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -52,7 +52,7 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 2
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 0
 module-margin-right = 0
@@ -65,11 +65,11 @@ font-4 = Font Awesome 5 Free Solid:style=Solid:pixelsize=12;1
 
 modules-left = i3
 modules-center = player-mpris-tail
-modules-right = pulseaudio xkeyboard memory eth date
+modules-right = pulseaudio xkeyboard cpu memory eth date
 
 tray-position = right
+tray-background = #b48ead
 tray-padding = 2
-;tray-background = #0063ff
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -216,9 +216,12 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+
+format-prefix = "    "
+format-suffix = ${hacks.module-margin}
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
+format-background = #bf616a
 label = %percentage:2%%
 
 [module/memory]
