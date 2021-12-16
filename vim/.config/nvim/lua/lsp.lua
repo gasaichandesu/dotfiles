@@ -64,7 +64,7 @@ local linters = {
     securities = {[2] = "error", [1] = "warning"}
   },
   phpcs = {
-    command = "phpcs",
+    command = "./vendor/bin/phpcs",
     sourceName = "phpcs",
     debounce = 300,
     rootPatterns = {"composer.lock", "vendor", ".git"},
@@ -99,10 +99,8 @@ require "lspconfig".diagnosticls.setup {
 }
 
 local function setup_servers()
-  local lspinstall = require "lspinstall"
+  local lspinstaller = require "nvim-lsp-installer"
   local lspconfig = require "lspconfig"
-
-  lspinstall.setup()
 
   lspconfig.lua.setup {
     -- An example of settings for an LSP server.
@@ -141,11 +139,6 @@ local function setup_servers()
 end
 
 setup_servers()
-
-require "lspinstall".post_install_hook = function()
-  setup_servers()
-  vim.cmd("bufdo e")
-end
 
 -- Flutter
 require "flutter-tools".setup {

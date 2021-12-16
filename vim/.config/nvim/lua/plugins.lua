@@ -2,8 +2,11 @@ return require("packer").startup(
   function()
     use "wbthomason/packer.nvim"
 
-    use "neovim/nvim-lspconfig"
-    use "kabouzeid/nvim-lspinstall"
+    use {
+      "neovim/nvim-lspconfig",
+      "williamboman/nvim-lsp-installer"
+    }
+
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/nvim-cmp"

@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -71,83 +71,108 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-vsnip"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   ["flutter-tools.nvim"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
+    url = "https://github.com/akinsho/flutter-tools.nvim"
   },
   ["formatter.nvim"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/formatter.nvim"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/formatter.nvim",
+    url = "https://github.com/mhartington/formatter.nvim"
   },
   fzf = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/fzf"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
   },
   ["fzf.vim"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/fzf.vim"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/tami5/lspsaga.nvim"
   },
   nerdtree = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nerdtree"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nerdtree",
+    url = "https://github.com/preservim/nerdtree"
   },
   ["nerdtree-git-plugin"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin",
+    url = "https://github.com/Xuyuanp/nerdtree-git-plugin"
   },
   ["nord-vim"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nord-vim"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nord-vim",
+    url = "https://github.com/arcticicestudio/nord-vim"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
-  },
-  ["nvim-lspinstall"] = {
-    loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["vim-airline"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/vim-airline"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/vim-airline",
+    url = "https://github.com/vim-airline/vim-airline"
   },
   ["vim-devicons"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/vim-devicons"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/home/gasaichan/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   }
 }
 
