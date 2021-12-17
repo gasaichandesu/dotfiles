@@ -34,7 +34,7 @@ function = #B48EAD
 module-margin="   "
 
 [bar/example]
-monitor=DP-0
+monitor=HDMI-0
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -146,6 +146,14 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
+ws-icon-2 = "1;"
+ws-icon-0 = "2;"
+ws-icon-1 = "3;"
+ws-default-icon = 
+
+label-separator-padding = 1  
+label-separator-foreground = ${colors.nord7}
+
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
@@ -154,23 +162,23 @@ label-mode-foreground = ${colors.foreground}
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %name%: %icon%
 label-focused-background = ${colors.nord7}
 label-focused-underline= ${colors.nord7}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %name%: %icon%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %name%: %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %name%: %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
