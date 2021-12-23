@@ -4,7 +4,6 @@ let mapleader = "\<Space>"
 lua require("plugins")
 lua require("lsp")
 lua require("formatting")
-lua require("tabs")
 
 colorscheme nord
 
