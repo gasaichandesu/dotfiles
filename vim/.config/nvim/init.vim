@@ -5,6 +5,14 @@ lua require("plugins")
 lua require("lsp")
 lua require("formatting")
 
+lua << END
+require'lualine'.setup {
+        options = {
+            theme = 'nord'
+        }
+    }
+END
+
 colorscheme nord
 
 set tabstop=4 softtabstop=4

@@ -11,6 +11,9 @@
 
 set $mod Mod4
 
+# Policykit agent
+exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 # 144 hz
 exec_always --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
 
@@ -21,7 +24,7 @@ exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 exec_always --no-startup-id feh --bg-scale ~/Pictures/plain-arch.png
 
 # Messengers
-exec_always --no-startup-id -startintray telegram-desktop
+exec_always --no-startup-id telegram-desktop -startintray
 exec_always --no-startup-id vk
 
 # Polybar
@@ -32,7 +35,7 @@ default_border pixel 1
 default_floating_border pixel 1
 
 # Mouse acceleration
-exec_always --no-startup-id xinput --set-prop 10 156 0.35 0 0 0 0.35 0 0 0 1
+exec_always --no-startup-id xinput --set-prop 10 155 0.5 0 0 0 0.5 0 0 0 1
 
 # Keyboard layout
 exec_always --no-startup-id setxkbmap -layout "us,ru" -option "grp:win_space_toggle"

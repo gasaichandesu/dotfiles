@@ -98,47 +98,25 @@ require "lspconfig".diagnosticls.setup {
   }
 }
 
-local function setup_servers()
-  local lspinstaller = require "nvim-lsp-installer"
-  local lspconfig = require "lspconfig"
+local lsp_installer = require "nvim-lsp-installer"
 
-  lspconfig.pyright.setup {}
+lsp_installer.on_server_ready(
+  function(server)
+    local opts = {}
 
-  lspconfig.sumneko_lua.setup {
-    -- An example of ssumneko_lua for an LSP server.
-    --    For more options, see nvim-lspconfig
-    settings = {
-      Lua = {
-        runtime = {
-          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-          version = "LuaJIT",
-          -- Setup your lua path
-          path = vim.split(package.path, ";")
-        },
-        diagnostics = {
-          -- Get the language server to recognize the `vim` global
-          globals = {"vim", "describe", "it", "before_each", "after_each"}
-        },
-        workspace = {
-          -- Make the server aware of Neovim runtime files
-          library = {
-            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-            [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
+    if server.name == "sumneko_lua" then
+      opts.settings = {
+        Lua = {
+          diagnostics = {
+            globals = {"vim"}
           }
         }
       }
-    },
-    on_attach = on_attach,
-    capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  }
+    end
 
-  lspconfig.intelephense.setup {
-    on_attach = on_attach,
-    capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  }
-end
-
-setup_servers()
+    server:setup(opts)
+  end
+)
 
 -- Flutter
 require "flutter-tools".setup {
