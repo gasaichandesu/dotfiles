@@ -18,6 +18,11 @@ return require("packer").startup(
     use "tpope/vim-fugitive"
 
     use {
+      "romgrk/barbar.nvim",
+      requires = {"kyazdani42/nvim-web-devicons"}
+    }
+
+    use {
       "junegunn/fzf",
       run = function()
         vim.fn["fzf#install"]()
