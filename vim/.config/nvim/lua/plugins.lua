@@ -11,6 +11,7 @@ return require("packer").startup(
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/nvim-cmp"
     use "tami5/lspsaga.nvim"
+    use "simrat39/symbols-outline.nvim"
 
     use "hrsh7th/cmp-vsnip"
     use "hrsh7th/vim-vsnip"
@@ -49,5 +50,6 @@ return require("packer").startup(
     use "vim-airline/vim-airline"
 
     use "arcticicestudio/nord-vim"
+    use "dracula/vim"
   end
 )
