@@ -7,6 +7,8 @@ Example usage:
 stow vim
 ```
 
+As a result, a symlink in home folder will be created with same structure as in vim folder
+
 # Bootstrap ZSH
 Two ZSH plugins are installed externally. Steps to install:
 ```bash
@@ -16,4 +18,3 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 ```
 
-As a result, a symlink in home folder will be created with same structure as in vim folder
