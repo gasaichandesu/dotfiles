@@ -1,0 +1,4 @@
+alias fba=flutter-build-apk.sh
+
+alias fbrb=flutter-build-runner-build.sh
+alias fbrw=flutter-build-runner-watch.sh
