@@ -1,53 +1,59 @@
-return require("packer").startup(
-  function(use)
-    use "wbthomason/packer.nvim"
+return require("packer").startup(function(use)
+	-- Neovim package manager
+	use("wbthomason/packer.nvim")
 
-    use {
-      "neovim/nvim-lspconfig",
-      "williamboman/nvim-lsp-installer"
-    }
+	-- Catppuccin colorscheme
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
-    use "hrsh7th/cmp-nvim-lsp"
-    use "hrsh7th/cmp-buffer"
-    use "hrsh7th/nvim-cmp"
-    use "tami5/lspsaga.nvim"
-    use "simrat39/symbols-outline.nvim"
+	-- LSP config helper
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	})
 
-    use "hrsh7th/cmp-vsnip"
-    use "hrsh7th/vim-vsnip"
+	-- Autocompletion
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-cmdline")
+	use("hrsh7th/nvim-cmp")
 
-    use "tpope/vim-fugitive"
+	-- Formatting
+	use("mhartington/formatter.nvim")
 
-    use {
-      "junegunn/fzf",
-      run = function()
-        vim.fn["fzf#install"]()
-      end
-    }
-    use "junegunn/fzf.vim"
+	-- Flutter
+	use({
+		"akinsho/flutter-tools.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+	})
 
-    use "mhartington/formatter.nvim"
+	-- Telescope
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.2",
+		-- or                            , branch = '0.1.x',
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
 
-    use {
-      "nvim-treesitter/nvim-treesitter",
-      run = function()
-        vim.cmd [[TSUpdate]]
-      end
-    }
+	-- Treesitter
+	use("nvim-treesitter/nvim-treesitter")
 
-    use "nvim-lua/plenary.nvim"
-    use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim"}
+	-- Blade syntax highlighting
+	use("jwalton512/vim-blade")
 
-    use "preservim/nerdtree"
-    use "Xuyuanp/nerdtree-git-plugin"
+	-- Git
+	use("tpope/vim-fugitive")
+	use("lewis6991/gitsigns.nvim")
 
-    use "kyazdani42/nvim-web-devicons"
-    use {
-      "nvim-lualine/lualine.nvim",
-      requires = {"kyazdani42/nvim-web-devicons", opt = true}
-    }
-
-    use "arcticicestudio/nord-vim"
-    use "dracula/vim"
-  end
-)
+	-- Files tree
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional
+		},
+	})
+end)
