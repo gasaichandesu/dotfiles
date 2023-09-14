@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<leader>e", vim.cmd("NvimTreeToggle"))
+vim.keymap.set("n", "<leader>e", require("nvim-tree.api").tree.toggle)

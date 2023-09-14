@@ -56,4 +56,7 @@ return require("packer").startup(function(use)
 			"nvim-tree/nvim-web-devicons", -- optional
 		},
 	})
+
+	-- Fancy scrollbar
+	use("petertriho/nvim-scrollbar")
 end)

@@ -1,7 +1,6 @@
 local ok, nvim_tree = pcall(require, "nvim-tree")
-local ok_events, nvim_tree_events = pcall(require, "nvim-tree.events")
 
-if not ok or not ok_events then
+if not ok then
 	return
 end
 
@@ -77,7 +76,7 @@ nvim_tree.setup({
 					color = true,
 				},
 				folder = {
-					enable = false,
+					enable = true,
 					color = true,
 				},
 			},
@@ -253,4 +252,3 @@ nvim_tree.setup({
 		},
 	},
 })
-
