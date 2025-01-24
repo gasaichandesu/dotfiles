@@ -1,6 +1,0 @@
-import:
-  - ~/.config/alacritty/catppuccin-latte.yml
-font:
-  size: 14.0
-  normal:
-    family: FiraCode Nerd Font
